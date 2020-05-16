@@ -3,7 +3,6 @@ package me.jakub.pcinfo.datafinders;
 import me.jakub.pcinfo.NewMain;
 import me.jakub.pcinfo.utils.Type;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

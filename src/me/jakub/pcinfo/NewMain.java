@@ -6,7 +6,6 @@ import me.jakub.pcinfo.datafinders.IP;
 import me.jakub.pcinfo.utils.NumberUtils;
 import me.jakub.pcinfo.utils.Type;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class NewMain {
