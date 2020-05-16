@@ -1,2 +1,1 @@
 # PCInfo
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2db0a5ce555749eeb9f0379fe8e9828d)](https://app.codacy.com/manual/jakubkoholas/PCInfo?utm_source=github.com&utm_medium=referral&utm_content=jakuubkoo/PCInfo&utm_campaign=Badge_Grade_Dashboard)
