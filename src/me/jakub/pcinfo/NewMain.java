@@ -6,9 +6,14 @@ import me.jakub.pcinfo.datafinders.IP;
 import me.jakub.pcinfo.utils.NumberUtils;
 import me.jakub.pcinfo.utils.Type;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class NewMain {
+
+    public static NewMain getInstance() {
+        return new NewMain();
+    }
 
     public NumberUtils numUtil = new NumberUtils();
     private HWID hwid = new HWID();
@@ -58,7 +63,6 @@ public class NewMain {
             log("Using VPN: " + VPN, Type.EMPTY);
         }else{
             log("Unknown error! Please restart application.", Type.ERROR);
-            Runtime.getRuntime().exit(1);
         }
 
     }

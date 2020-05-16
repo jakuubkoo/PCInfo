@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class IP {
 
@@ -22,12 +22,6 @@ public class IP {
             JsonObject jsonObject = readJsonFromUrl("https://ip.teoh.io/api/vpn/");
             return String.valueOf(jsonObject.get("ip"));
 
-        } catch (MalformedURLException e) {
-            new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            new NewMain().log("------------------------------------", Type.EMPTY);
-            e.printStackTrace();
-            new NewMain().log("------------------------------------", Type.EMPTY);
-            return "";
         } catch (IOException e) {
             new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
             new NewMain().log("------------------------------------", Type.EMPTY);
@@ -43,17 +37,11 @@ public class IP {
             JsonObject jsonObject = readJsonFromUrl("https://ip.teoh.io/api/vpn/");
             return jsonObject.get("vpn_or_proxy").getAsBoolean();
 
-        } catch (MalformedURLException e) {
-            new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            new NewMain().log("------------------------------------", Type.EMPTY);
-            e.printStackTrace();
-            new NewMain().log("------------------------------------", Type.EMPTY);
-            return false;
         } catch (IOException e) {
-            new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            new NewMain().log("------------------------------------", Type.EMPTY);
+            NewMain.getInstance().log("Please contact administrator, or try restart your computer.", Type.ERROR);
+            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
             e.printStackTrace();
-            new NewMain().log("------------------------------------", Type.EMPTY);
+            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
             return false;
         }
     }
@@ -62,10 +50,9 @@ public class IP {
 
         URLConnection con = new URL(url).openConnection();
         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
-        InputStream is = con.getInputStream();
 
-        try {
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+        try (InputStream is = con.getInputStream()) {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
             StringBuilder sb = new StringBuilder();
 
             int cp;
@@ -73,11 +60,7 @@ public class IP {
                 sb.append((char) cp);
             }
 
-            JsonObject json = new JsonParser().parse(sb.toString()).getAsJsonObject();
-
-            return json;
-        } finally {
-            is.close();
+            return new JsonParser().parse(sb.toString()).getAsJsonObject();
         }
     }
 }
