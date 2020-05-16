@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.nio.charset.Charset;
 
 public class IP {
@@ -19,7 +20,7 @@ public class IP {
         try {
 
             JsonObject jsonObject = readJsonFromUrl("https://ip.teoh.io/api/vpn/");
-            return jsonObject.get("ip").getAsString();
+            return String.valueOf(jsonObject.get("ip"));
 
         } catch (MalformedURLException e) {
             new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
@@ -58,7 +59,10 @@ public class IP {
     }
 
     public JsonObject readJsonFromUrl(String url) throws IOException {
-        InputStream is = new URL(url).openStream();
+
+        URLConnection con = new URL(url).openConnection();
+        con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
+        InputStream is = con.getInputStream();
 
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
