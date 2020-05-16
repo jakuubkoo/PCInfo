@@ -1,13 +1,11 @@
 package me.jakub.pcinfo;
 
-import me.jakub.pcinfo.DataFinders.HWID;
-import me.jakub.pcinfo.DataFinders.HardwareInfo;
-import me.jakub.pcinfo.DataFinders.IP;
-import me.jakub.pcinfo.Utils.NumberUtils;
-import me.jakub.pcinfo.Utils.Type;
+import me.jakub.pcinfo.datafinders.HWID;
+import me.jakub.pcinfo.datafinders.HardwareInfo;
+import me.jakub.pcinfo.datafinders.IP;
+import me.jakub.pcinfo.utils.NumberUtils;
+import me.jakub.pcinfo.utils.Type;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class NewMain {
@@ -99,67 +97,8 @@ public class NewMain {
     }
 
     public void clean(){
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        for (int i = 0; i < 50; i++){
+            System.out.println(" ");
+        }
     }
 }

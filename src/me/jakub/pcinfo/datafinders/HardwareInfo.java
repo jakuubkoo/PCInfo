@@ -1,14 +1,7 @@
-package me.jakub.pcinfo.DataFinders;
+package me.jakub.pcinfo.datafinders;
 
 import me.jakub.pcinfo.NewMain;
-import me.jakub.pcinfo.Utils.Type;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.List;
+import me.jakub.pcinfo.utils.Type;
 
 public class HardwareInfo {
 

@@ -1,7 +1,7 @@
-package me.jakub.pcinfo.DataFinders;
+package me.jakub.pcinfo.datafinders;
 
 import me.jakub.pcinfo.NewMain;
-import me.jakub.pcinfo.Utils.Type;
+import me.jakub.pcinfo.utils.Type;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

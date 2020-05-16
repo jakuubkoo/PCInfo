@@ -1,9 +1,9 @@
-package me.jakub.pcinfo.DataFinders;
+package me.jakub.pcinfo.datafinders;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import me.jakub.pcinfo.NewMain;
-import me.jakub.pcinfo.Utils.Type;
+import me.jakub.pcinfo.utils.Type;
 
 import java.io.BufferedReader;
 import java.io.IOException;

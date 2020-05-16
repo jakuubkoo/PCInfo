@@ -1,4 +1,4 @@
-package me.jakub.pcinfo.Utils;
+package me.jakub.pcinfo.utils;
 
 public enum Type {
 
