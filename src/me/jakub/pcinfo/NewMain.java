@@ -1,6 +1,7 @@
 package me.jakub.pcinfo;
 
 import me.jakub.pcinfo.DataFinders.HWID;
+import me.jakub.pcinfo.DataFinders.HardwareInfo;
 import me.jakub.pcinfo.DataFinders.IP;
 import me.jakub.pcinfo.Utils.NumberUtils;
 import me.jakub.pcinfo.Utils.Type;
@@ -14,6 +15,7 @@ public class NewMain {
     public NumberUtils numUtil = new NumberUtils();
     private HWID hwid = new HWID();
     private IP ip = new IP();
+    private HardwareInfo hardwareInfo = new HardwareInfo();
 
     public void start(){
 
@@ -27,9 +29,18 @@ public class NewMain {
         System.out.println(type);
 
         if(type.equals("1")){
-
+            hardwareInfo.getInfo();
         }else if(type.equals("2")){
             log("Getting information from computer..", Type.INFO);
+            log("Getting OS info..", Type.INFO);
+            String OSName = System.getProperty("os.name");
+            String OSArchitecture = System.getProperty("os.arch");
+            String OSVersion = System.getProperty("os.version");
+            log("Getting Java info..", Type.INFO);
+            String javaVer = System.getProperty("java.version");
+            log("Getting User info..", Type.INFO);
+            String username = System.getProperty("user.name");
+            String userDir = System.getProperty("user.home");
             log("Getting HWID..", Type.INFO);
             String HWID = hwid.getHWID();
             log("Getting IP..", Type.INFO);
@@ -38,6 +49,12 @@ public class NewMain {
             boolean VPN = ip.isVPN();
             clean();
             log("Information:", Type.EMPTY);
+            log("OS Name: " + OSName, Type.EMPTY);
+            log("OS Architecture: " + OSArchitecture, Type.EMPTY);
+            log("OS Version: " + OSVersion, Type.EMPTY);
+            log("Java Version: " + javaVer, Type.EMPTY);
+            log("User Name: " + username, Type.EMPTY);
+            log("User Directory: " + userDir, Type.EMPTY);
             log("HWID: " + HWID, Type.EMPTY);
             log("IP: " + IP, Type.EMPTY);
             log("Using VPN: " + VPN, Type.EMPTY);
@@ -81,7 +98,7 @@ public class NewMain {
 
     }
 
-    private void clean(){
+    public void clean(){
         System.out.println("");
         System.out.println("");
         System.out.println("");
