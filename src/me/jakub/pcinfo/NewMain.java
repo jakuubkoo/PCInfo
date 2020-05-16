@@ -26,9 +26,9 @@ public class NewMain {
 
         System.out.println(type);
 
-        if(type.equals("1")){
+        if("1".equals(type)){
             hardwareInfo.getInfo();
-        }else if(type.equals("2")){
+        }else if("2".equals(type)){
             log("Getting information from computer..", Type.INFO);
             log("Getting OS info..", Type.INFO);
             String OSName = System.getProperty("os.name");
@@ -58,7 +58,7 @@ public class NewMain {
             log("Using VPN: " + VPN, Type.EMPTY);
         }else{
             log("Unknown error! Please restart application.", Type.ERROR);
-            System.exit(0);
+            Runtime.getRuntime().exit(1);
         }
 
     }
@@ -91,6 +91,9 @@ public class NewMain {
                 break;
             case EMPTY:
                 System.out.println(info);
+                break;
+            default:
+                log("Unknown error! Please restart application.", Type.ERROR);
                 break;
         }
 
