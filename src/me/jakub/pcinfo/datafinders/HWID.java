@@ -1,6 +1,6 @@
 package me.jakub.pcinfo.datafinders;
 
-import me.jakub.pcinfo.NewMain;
+import me.jakub.pcinfo.Main;
 import me.jakub.pcinfo.utils.Type;
 
 import java.nio.charset.StandardCharsets;
@@ -26,10 +26,10 @@ public class HWID {
             }
             return s.toString();
         } catch (NoSuchAlgorithmException e) {
-            NewMain.getInstance().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
+            Main.getInstance().log("Please contact administrator, or try restart your computer.", Type.ERROR);
+            Main.getInstance().log("------------------------------------", Type.EMPTY);
             e.printStackTrace();
-            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
+            Main.getInstance().log("------------------------------------", Type.EMPTY);
             return "";
         }
     }

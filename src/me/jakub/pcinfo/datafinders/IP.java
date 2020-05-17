@@ -2,7 +2,7 @@ package me.jakub.pcinfo.datafinders;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import me.jakub.pcinfo.NewMain;
+import me.jakub.pcinfo.Main;
 import me.jakub.pcinfo.utils.Type;
 
 import java.io.BufferedReader;
@@ -22,10 +22,10 @@ public class IP {
             return String.valueOf(jsonObject.get("ip"));
 
         } catch (IOException e) {
-            new NewMain().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            new NewMain().log("------------------------------------", Type.EMPTY);
+            new Main().log("Please contact administrator, or try restart your computer.", Type.ERROR);
+            new Main().log("------------------------------------", Type.EMPTY);
             e.printStackTrace();
-            new NewMain().log("------------------------------------", Type.EMPTY);
+            new Main().log("------------------------------------", Type.EMPTY);
             return "";
         }
     }
@@ -37,10 +37,10 @@ public class IP {
             return jsonObject.get("vpn_or_proxy").getAsBoolean();
 
         } catch (IOException e) {
-            NewMain.getInstance().log("Please contact administrator, or try restart your computer.", Type.ERROR);
-            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
+            Main.getInstance().log("Please contact administrator, or try restart your computer.", Type.ERROR);
+            Main.getInstance().log("------------------------------------", Type.EMPTY);
             e.printStackTrace();
-            NewMain.getInstance().log("------------------------------------", Type.EMPTY);
+            Main.getInstance().log("------------------------------------", Type.EMPTY);
             return false;
         }
     }
